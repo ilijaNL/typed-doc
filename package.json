@@ -16,7 +16,8 @@
     "test": "turbo run test",
     "tc": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean:danger": "git clean -xdf"
   },
   "devDependencies": {
     "prettier": "^2.7.1",

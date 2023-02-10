@@ -25,4 +25,3 @@ jobs:
       - run: yarn install --frozen-lockfile --ignore-scripts
       - run: yarn lint && yarn tc
       - run: yarn test
-      - run: yarn build
