@@ -9,6 +9,7 @@
       "outputs": ["coverage/**"],
       "dependsOn": []
     },
+    "tc": {},
     "lint": {},
     "dev": {
       "cache": false,
