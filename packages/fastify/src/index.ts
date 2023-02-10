@@ -13,7 +13,6 @@ function normalizeRoute(route: string) {
   return `/${route}`;
 }
 
-//
 export function getContextFromRequest<T>(req: FastifyRequest) {
   return (req as any).req_context as T;
 }
