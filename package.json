@@ -1,0 +1,28 @@
+{
+  "name": "typed-doc",
+  "version": "0.0.1",
+  "packageManager": "yarn@1.22.19",
+  "repository": "https://github.com/ilijaNL/typed-doc.git",
+  "author": "ilijaNL",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --parallel --continue",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "eslint": "^8.4.1",
+    "@changesets/cli": "2.26.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-config-turbo": "^0.0.7",
+    "turbo": "^1.7.4"
+  }
+}
