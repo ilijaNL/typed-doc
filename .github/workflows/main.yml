@@ -13,6 +13,10 @@ on:
       - 'docs/**'
       - '*.md'
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +29,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "yarn"
-      - run: yarn install --frozen-lockfile --ignore-scripts
-      - run: yarn lint && yarn tc
-      - run: yarn test
+      - name: install pnpm
+        run: npm i pnpm@latest -g
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint && pnpm tc
+      - run: pnpm test

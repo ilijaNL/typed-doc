@@ -1,21 +1,17 @@
 {
   "name": "typed-doc",
   "version": "0.0.1",
-  "packageManager": "yarn@1.22.19",
   "repository": "https://github.com/ilijaNL/typed-doc.git",
   "author": "ilijaNL",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "tc": "turbo run test",
-    "build-and-publish": "yarn build && changeset publish",
+    "ci:publish": "pnpm publish -r",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean:danger": "git clean -xdf"
