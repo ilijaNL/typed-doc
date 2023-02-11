@@ -3,11 +3,7 @@ import { Static, TObject } from '@sinclair/typebox';
 // Contract stuff
 export type MethodType = 'query' | 'mutation';
 
-export interface RPC<
-  Type,
-  Input extends TObject = TObject,
-  Output extends TObject = TObject
-> {
+export interface RPC<Type, Input extends TObject = TObject, Output extends TObject = TObject> {
   methodType: Type;
   input: Input;
   output: Output;
@@ -29,7 +25,6 @@ export type PickByValue<T, ValueType> = Pick<
   T,
   { [Key in keyof T]-?: T[Key] extends ValueType ? Key : never }[keyof T]
 >;
-
 
 export type PickQueries<T extends Contract> = PickByValue<T, { methodType: 'query' }>;
 export type PickMutations<T extends Contract> = PickByValue<T, { methodType: 'mutation' }>;

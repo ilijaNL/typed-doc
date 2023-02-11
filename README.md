@@ -5,7 +5,7 @@
 1. Install dependencies
 
 ```bash
-yarn add @typed-doc/core @typed-doc/fastify
+npm i @typed-doc/core @typed-doc/fastify
 ```
 
 2. Define contract

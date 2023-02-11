@@ -23,8 +23,9 @@
     "typescript": "^4.9.0"
   },
   "dependencies": {
+    "@types/node": "*",
     "@sinclair/typebox": "^0.25.9",
-    "@typed-doc/core": "*"
+    "@typed-doc/core": "workspace:*"
   },
   "peerDependencies": {
     "fastify": "^3.0.0 || ^4.0.0"
