@@ -1,5 +1,13 @@
 # @typed-doc/fastify
 
+## 0.0.2
+
+### Patch Changes
+
+- 4bfdf07: Version Bump + CLI
+- Updated dependencies [4bfdf07]
+  - @typed-doc/core@0.0.3
+
 ## 0.0.1
 
 ### Patch Changes
